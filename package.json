@@ -1,6 +1,6 @@
 {
   "name": "rtl-sdr",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A low level binding to the librtlsdr librtlsdr for Node.js",
   "main": "index.js",
   "gypfile": true,
@@ -32,5 +32,9 @@
   "bugs": {
     "url": "https://github.com/watson/rtl-sdr/issues"
   },
-  "homepage": "https://github.com/watson/rtl-sdr#readme"
+  "homepage": "https://github.com/watson/rtl-sdr#readme",
+  "coordinates": [
+    48.9034984,
+    2.3645625
+  ]
 }
