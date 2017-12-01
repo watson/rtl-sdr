@@ -3,6 +3,8 @@
 A low level binding to the
 [librtlsdr](https://github.com/steve-m/librtlsdr) library for Node.js.
 
+[![Build status](https://travis-ci.org/watson/rtl-sdr.svg?branch=master)](https://travis-ci.org/watson/rtl-sdr)
+
 ## Prerequisites
 
 This module requires that you have
