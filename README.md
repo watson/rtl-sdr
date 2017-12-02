@@ -290,17 +290,6 @@ Arguments:
 
 Returns `0` on success.
 
-#### `error = set_tuner_bandwidth(device, bw)`
-
-Set the bandwidth for the device.
-
-Arguments:
-
-- `device` - The device handle given by `open()`
-- `bw` - Bandwidth in Hz. `0` means automatic BW selection
-
-Returns 0 on success.
-
 #### `gain = get_tuner_gain(device)`
 
 Get actual gain the device is configured to.

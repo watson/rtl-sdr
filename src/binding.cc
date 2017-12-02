@@ -136,12 +136,6 @@ NAN_METHOD(set_tuner_gain) {
   CALL_RTLSDR_INT(rtlsdr_set_tuner_gain(dev, gain))
 }
 
-NAN_METHOD(set_tuner_bandwidth) {
-  ASSERT_DEV(info[0], dev)
-  ASSERT_UINT(info[1], bw)
-  CALL_RTLSDR_INT(rtlsdr_set_tuner_bandwidth(dev, bw))
-}
-
 NAN_METHOD(get_tuner_gain) {
   ASSERT_DEV(info[0], dev)
   CALL_RTLSDR_INT(rtlsdr_get_tuner_gain(dev))
@@ -315,7 +309,6 @@ NAN_MODULE_INIT(Init) {
   EXPORT_FUNCTION(get_tuner_type)
   EXPORT_FUNCTION(get_tuner_gains)
   EXPORT_FUNCTION(set_tuner_gain)
-  EXPORT_FUNCTION(set_tuner_bandwidth)
   EXPORT_FUNCTION(get_tuner_gain)
   EXPORT_FUNCTION(set_tuner_if_gain)
   EXPORT_FUNCTION(set_tuner_gain_mode)
