@@ -284,12 +284,6 @@ NAN_METHOD(cancel_async) {
   CALL_RTLSDR_INT(rtlsdr_cancel_async(dev))
 }
 
-NAN_METHOD(set_bias_tee) {
-  ASSERT_DEV(info[0], dev)
-  ASSERT_INT(info[1], on)
-  CALL_RTLSDR_INT(rtlsdr_set_bias_tee(dev, on))
-}
-
 NAN_MODULE_INIT(Init) {
   EXPORT_FUNCTION(get_device_count)
   EXPORT_FUNCTION(get_device_name)
@@ -325,7 +319,6 @@ NAN_MODULE_INIT(Init) {
   // EXPORT_FUNCTION(wait_async) // deprecated
   EXPORT_FUNCTION(read_async)
   EXPORT_FUNCTION(cancel_async)
-  EXPORT_FUNCTION(set_bias_tee)
 }
 
 NODE_MODULE(rtlsdr, Init)

@@ -477,17 +477,6 @@ Arguments:
 
 Returns `0` on success.
 
-#### `error = set_bias_tee(device, on)`
-
-Enable or disable the bias tee on GPIO PIN 0.
-
-Arguments:
-
-- `device` - The device handle given by `open()`
-- `on` - `1` for Bias T on. `0` for Bias T off
-
-Returns `-1` if device is not initialized. `0` otherwise.
-
 ## License
 
 MIT
