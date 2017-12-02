@@ -1,6 +1,6 @@
 {
   "name": "rtl-sdr",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A low level binding to the librtlsdr librtlsdr for Node.js",
   "main": "index.js",
   "gypfile": true,
