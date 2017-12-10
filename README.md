@@ -12,11 +12,18 @@ This module requires that you have
 system. In turn librtlsdr requires [libusb](http://libusb.info/).
 
 You can install librtlsdr with most package managers which will ensure
-you have the right dependencies. To install using Homebrew on macOS,
-simply run:
+you have the right dependencies.
+
+Homebrew (macOS):
 
 ```
 brew install librtlsdr
+```
+
+Debian based Linux distros:
+
+```
+apt-get install librtlsdr-dev
 ```
 
 ## Installation
