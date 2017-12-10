@@ -47,14 +47,9 @@ NAN_METHOD(open) {
 NAN_METHOD(close) {
   ASSERT_OBJECT(info[0], jsdev)
   rtlsdr_dev_t *dev = (struct rtlsdr_dev *)RTLSDRDevice::Resolve(jsdev);
-  fprintf(stderr, "closing...\n");
-  int result = -1;
-  rtlsdr_close(dev);
-  fprintf(stderr, "rtlsdr_close result: %d\n", result);
+  int returnValue = rtlsdr_close(dev);
   Nan::SetInternalFieldPointer(jsdev, 0, 0);
-  fprintf(stderr, "foo\n");
-  info.GetReturnValue().Set(Nan::New(result));
-  fprintf(stderr, "bar\n");
+  info.GetReturnValue().Set(Nan::New(returnValue));
 }
 
 NAN_METHOD(set_xtal_freq) {
