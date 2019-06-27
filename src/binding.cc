@@ -251,7 +251,7 @@ public:
       Nan::New((uint32_t)len),
     };
 
-    onData->Call(2, arguments);
+    Nan::Call(onData->GetFunction(), Nan::GetCurrentContext()->Global(), 2, arguments);
   }
 private:
   Nan::Callback *onData;
