@@ -22,7 +22,7 @@
 #define CDATA_OR_NULL(name, var) \
   char *var = NULL; \
   if (name->IsObject()) { \
-    Local<Object> buf = name->ToObject(); \
+    Local<Object> buf = name->ToObject(Nan::GetCurrentContext()).ToLocalChecked(); \
     var = CDATA(buf); \
   }
 
@@ -31,42 +31,42 @@
     Nan::ThrowError(#var " must be a number"); \
     return; \
   } \
-  uint8_t var = name->IntegerValue();
+  uint8_t var = name->IntegerValue(Nan::GetCurrentContext()).FromJust();
 
 #define ASSERT_UINT16(name, var) \
   if (!name->IsNumber()) { \
     Nan::ThrowError(#var " must be a number"); \
     return; \
   } \
-  uint16_t var = name->IntegerValue();
+  uint16_t var = name->IntegerValue(Nan::GetCurrentContext()).FromJust();
 
 #define ASSERT_UINT(name, var) \
   if (!name->IsNumber()) { \
     Nan::ThrowError(#var " must be a number"); \
     return; \
   } \
-  uint32_t var = name->IntegerValue();
+  uint32_t var = name->IntegerValue(Nan::GetCurrentContext()).FromJust();
 
 #define ASSERT_INT(name, var) \
   if (!name->IsNumber()) { \
     Nan::ThrowError(#var " must be a number"); \
     return; \
   } \
-  int var = name->IntegerValue();
+  int var = name->IntegerValue(Nan::GetCurrentContext()).FromJust();
 
 #define ASSERT_OBJECT(name, var) \
   if (!name->IsObject()) { \
     Nan::ThrowError(#var " must be an object"); \
     return; \
   } \
-  Local<Object> var = name->ToObject();
+  Local<Object> var = name->ToObject(Nan::GetCurrentContext()).ToLocalChecked();
 
 #define ASSERT_DEV(name, var) \
   if (!name->IsObject()) { \
     Nan::ThrowError(#var " must be an object"); \
     return; \
   } \
-  Local<Object> jsdev = name->ToObject(); \
+  Local<Object> jsdev = name->ToObject(Nan::GetCurrentContext()).ToLocalChecked(); \
   rtlsdr_dev_t *var = (struct rtlsdr_dev *)RTLSDRDevice::Resolve(jsdev);
 
 #define ASSERT_BUFFER(name, var) \
@@ -74,7 +74,7 @@
     Nan::ThrowError(#var " must be a buffer"); \
     return; \
   } \
-  Local<Object> var = name->ToObject();
+  Local<Object> var = name->ToObject(Nan::GetCurrentContext()).ToLocalChecked();
 
 #define ASSERT_STRING(name, var) \
   if (!name->IsObject()) { \
